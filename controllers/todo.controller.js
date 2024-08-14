@@ -11,6 +11,7 @@ const getTodos = async (req, res) => {
       },
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({
       status: "error",
       message: "전체 todo 목록 불러오기 실패",
@@ -35,13 +36,13 @@ const createTodo = async (req, res) => {
       message: "새로운 todo 등록 성공",
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({
       status: "error",
       message: "새로운 todo 등록 실패",
       error: {
         code: 500,
         message: "Internal Server Error",
-        error,
       },
     });
   }
@@ -60,13 +61,13 @@ const editTodo = async (req, res) => {
       message: "todo 수정 성공",
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({
       status: "error",
       message: "todo 수정 실패",
       error: {
         code: 500,
         message: "Internal Server Error",
-        error,
       },
     });
   }
@@ -81,13 +82,13 @@ const deleteTodo = async (req, res) => {
       message: "todo 삭제 성공",
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({
       status: "error",
       message: "todo 삭제 실패",
       error: {
         code: 500,
         message: "Internal Server Error",
-        error,
       },
     });
   }
